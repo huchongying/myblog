@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block head %}<title>注册页面</title>{% endblock %}
+
+{% block content %}
+<div class="box">
+
+            {% csrf_token %}
+            <h1 class="is-uppercase has-text-centered has-text-weight-bold">MY BLOG
+                <br><span class="tag">注册</span>
+            </h1>
+            <hr class=" dropdown-divider">
+        <form action="" method="post">
+            {% csrf_token %}
+        {%  for field in form %}
+                  <label>{{ field.label_tag }}</label>
+            {{ field }}
+            {{ field.errors}}
+            {% endfor %}
+            <input type="submit" style="margin-top: 1em;" class="button is-link is-fullwidth" value="注册">
+        </form>
+    </div>
+{% endblock %}
